@@ -23,18 +23,14 @@ void inserirElemento(Celula *head, int x){
 // Função para remoção de elementos da fila.
 void removerElemento(Celula *head){
   Celula *celula;
-  Celula *tmp;
-  // Caminhamento para a ultima posição da fila.
-  for(celula = head; celula -> prox != NULL; celula = celula -> prox){
-    tmp = celula;                                   // Apontador para penultima posição da fila.
-  }
 
-  if(celula == head){                               // Fila vazia.
+  if(head -> prox == NULL){                                 // Fila vazia.
     printf("\nFila vazia!\n");
-  }else{                                            // Fila possui pelo menos um elemento.
-    tmp -> prox = NULL;                             // Retira ultimo elemento da fila.
+  }else{
+    celula = head -> prox;
+    head -> prox = head -> prox -> prox;                    // Retira primeiro elemento da fila.
     printf("\nElemento removido: %d\n", celula -> elemento);
-    free(celula);                                   // Libera memória.
+    free(celula);                                           // Libera memória.
   }
 }
 

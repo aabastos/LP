@@ -11,7 +11,7 @@ typedef struct aluno Aluno;
 
 void modifica(Aluno *aluno){
   aluno -> numMatricula = 1;
-  strcpy(aluno -> nome, "André");
+  strcpy(aluno -> nome, "Aluno");
 }
 
 int main(){
